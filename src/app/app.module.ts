@@ -13,6 +13,11 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { PortalModule } from './portal/portal.module';
 import { PlayerModule } from "./player/player.module";
+import { GlobalService } from './global.service';
+import firebaseCofig from './firebase';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 
 @NgModule({
@@ -25,14 +30,17 @@ import { PlayerModule } from "./player/player.module";
     IonicStorageModule.forRoot(),
     HttpClientModule,
     PortalModule,
-    PlayerModule
+    PlayerModule,
+    AngularFireModule.initializeApp(firebaseCofig),
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite
+    SQLite,
+    GlobalService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
