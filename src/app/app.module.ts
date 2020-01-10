@@ -11,8 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
-import { PortalModule } from './portal/portal.module';
-import { PlayerModule } from "./player/player.module";
 import { GlobalService } from './global.service';
 import firebaseCofig from './firebase';
 import { AngularFireModule } from '@angular/fire';
@@ -31,8 +29,6 @@ import { CommonModule} from '@angular/common';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    PortalModule,
-    PlayerModule,
     AngularFireModule.initializeApp(firebaseCofig),
     AngularFireAuthModule,
     AngularFirestoreModule,

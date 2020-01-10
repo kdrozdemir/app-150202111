@@ -7,30 +7,11 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
-  },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  {
-    path: 'portal',
-    loadChildren: './portal/portal.module#PortalModule'
-  },
-  {
-    path: 'player',
-    loadChildren: './player/player.module#PlayerModule'
-  },
-
-  { path: 'meeting-detail/:id', loadChildren: './meeting-detail/meeting-detail.module#MeetingDetailPageModule' },
+  { path: 'home', loadChildren: './meeting/meetings/meetings.module#HomePageModule' },
+  { path: 'meeting-detail/:id', loadChildren: './meeting/meeting-detail/meeting-detail.module#MeetingDetailPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'chat', loadChildren: './meetingChat/chat-page/chat-page.module#ChatPagePageModule' },
-  { path: 'chat', loadChildren: './meetingChat/chat-page/chat-page.module#ChatPagePageModule' }
-
-
+  { path: 'chat', loadChildren: './meetingChat/chat-page/chat-page.module#ChatPagePageModule' }, 
 ];
 
 @NgModule({
