@@ -1,24 +1,27 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouteReuseStrategy } from "@angular/router";
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { SQLite } from '@ionic-native/sqlite/ngx';
-import { IonicStorageModule } from '@ionic/storage';
-import { HttpClientModule } from '@angular/common/http';
-import { PortalModule } from './portal/portal.module';
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { SQLite } from "@ionic-native/sqlite/ngx";
+import { IonicStorageModule } from "@ionic/storage";
+import { HttpClientModule } from "@angular/common/http";
+import { PortalModule } from "./portal/portal.module";
 import { PlayerModule } from "./player/player.module";
-import { GlobalService } from './global.service';
-import firebaseCofig from './firebase';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GlobalService } from "./global.service";
+import firebaseCofig from "./firebase";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { FileChooser } from "@ionic-native/file-chooser/ngx";
+import { File } from "@ionic-native/file/ngx";
 
-
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule } from "@angular/fire/storage";
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,15 +35,19 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     PortalModule,
     PlayerModule,
     AngularFireModule.initializeApp(firebaseCofig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite,
-    GlobalService
+    GlobalService,
+    File,
+    FileChooser
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
