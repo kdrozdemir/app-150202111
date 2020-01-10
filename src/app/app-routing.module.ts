@@ -26,7 +26,8 @@ const routes: Routes = [
 
   { path: 'meeting-detail/:id', loadChildren: './meeting-detail/meeting-detail.module#MeetingDetailPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' }
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },  { path: 'chat-page', loadChildren: './meetingChat/chat-page/chat-page.module#ChatPagePageModule' }
+
 ];
 
 @NgModule({

@@ -1,0 +1,3 @@
+[submodule "src/app/meetingChat"]
+	path = src/app/meetingChat
+	url = https://github.com/2019-BLM441/module-150202056.git
