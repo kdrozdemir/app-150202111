@@ -35,6 +35,14 @@ const routes: Routes = [
     loadChildren: "./register/register.module#RegisterPageModule"
   },
   {
+    path: "chat",
+    loadChildren: "./meetingChat/chat-page/chat-page.module#ChatPagePageModule"
+  },
+  {
+    path: "chat",
+    loadChildren: "./meetingChat/chat-page/chat-page.module#ChatPagePageModule"
+  },
+  {
     path: "documents",
     loadChildren: "./documents/documents/documents.module#DocumentsPageModule"
   }

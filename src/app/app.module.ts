@@ -13,12 +13,22 @@ import { IonicStorageModule } from "@ionic/storage";
 import { HttpClientModule } from "@angular/common/http";
 import { PortalModule } from "./portal/portal.module";
 import { PlayerModule } from "./player/player.module";
+<<<<<<< HEAD
 import { GlobalService } from "./global.service";
 import firebaseCofig from "./firebase";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FileChooser } from "@ionic-native/file-chooser/ngx";
 import { File } from "@ionic-native/file/ngx";
+=======
+import { GlobalService } from './global.service';
+import firebaseCofig from './firebase';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { CommonModule} from '@angular/common';
+
+>>>>>>> ced05a2fc2edc5c4accd16b84b4bfc3f4c0be0b0
 
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from "@angular/fire/storage";
@@ -37,7 +47,8 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
     AngularFireModule.initializeApp(firebaseCofig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    CommonModule
   ],
   providers: [
     StatusBar,

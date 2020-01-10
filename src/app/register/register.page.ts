@@ -40,7 +40,16 @@ export class RegisterPage implements OnInit {
       console.log(res)
       if (res.user.uid != undefined){
         alert("Login başarılı")
-        this.navcontroller.navigateRoot("home")
+        localStorage.setItem('userid', this.afAuth.auth.currentUser.uid);
+        this.afAuth.auth.currentUser.updateProfile({
+           displayName : this.username,
+           photoURL : ''
+        }).then(()=>{
+           this.navcontroller.navigateRoot("home")
+        }).catch(err=>{
+            alert(err.message)
+        })
+        //this.navcontroller.navigateRoot("home")
         this.globalService.authUser.isLoggedIn = true
       }
     } catch (error) {
