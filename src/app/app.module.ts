@@ -17,6 +17,8 @@ import { GlobalService } from './global.service';
 import firebaseCofig from './firebase';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { CommonModule} from '@angular/common';
 
 
 
@@ -32,7 +34,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     PortalModule,
     PlayerModule,
     AngularFireModule.initializeApp(firebaseCofig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    CommonModule
   ],
   providers: [
     StatusBar,

@@ -17,11 +17,18 @@ export class MeetingDetailPage implements OnInit {
 
   ngOnInit() {
     this.meetingDetail = this.globalService.getMeeting(this.route.snapshot.paramMap.get('id'));
+    localStorage.setItem('meetingid',this.route.snapshot.paramMap.get('id'))
     if (this.meetingDetail == null) {
       alert("Error!");
       this.navCtrl.pop();
       return;
     }
+  }
+  chatOpen(){
+
+    this.navCtrl.navigateForward('chat')
+    console.log("burdayim")
+
   }
 
 }
