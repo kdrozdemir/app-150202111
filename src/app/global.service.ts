@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class GlobalService {
-
   public meetings = [
     {
       id: 1,
       title: "deneme",
       description: "açıklama",
-      createdBy: "Semih"
+      createdBy: "Burak"
     }
   ];
 
@@ -20,13 +19,12 @@ export class GlobalService {
     fullname: null
   };
 
-  constructor() { }
+  constructor() {}
 
   getMeeting(id) {
     let meeting = null;
     this.meetings.forEach(e => {
-      if (e.id == id)
-        meeting = e;
+      if (e.id == id) meeting = e;
     });
     return meeting;
   }

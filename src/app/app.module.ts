@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouteReuseStrategy } from "@angular/router";
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,8 +17,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CommonModule} from '@angular/common';
+import { FileChooser } from "@ionic-native/file-chooser/ngx";
+import { File } from "@ionic-native/file/ngx";
 
-
+import { AngularFireStorageModule } from "@angular/fire/storage";
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,7 @@ import { CommonModule} from '@angular/common';
     AngularFireModule.initializeApp(firebaseCofig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     CommonModule
   ],
   providers: [
@@ -39,8 +42,10 @@ import { CommonModule} from '@angular/common';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite,
-    GlobalService
+    GlobalService,
+    File,
+    FileChooser
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -15,25 +15,8 @@ export class AppComponent {
       title: 'Toplantılar',
       url: '/home',
       icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
-    {
-      title: 'Portal',
-      url: '/portal',
-      icon: 'grid'
-    },
-    {
-      title: 'Player',
-      url: '/player',
-      icon: 'musical-notes'
     }
   ];
-
-
 
   constructor(
     private platform: Platform,
