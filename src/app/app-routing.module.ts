@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'chat', loadChildren: './meetingChat/chat-page/chat-page.module#ChatPagePageModule' }, 
-  { path: "documents", loadChildren: "./documents/documents/documents.module#DocumentsPageModule" }
+  { path: "documents", loadChildren: "./documents/documents/documents.module#DocumentsPageModule" },
+  { path: 'meeting-add', loadChildren: './meeting/meeting-add/meeting-add.module#MeetingAddPageModule' },
+  { path: 'participants', loadChildren: './meetingParticipants/participants/participants.module#ParticipantsPageModule' }
 ];
 
 @NgModule({
