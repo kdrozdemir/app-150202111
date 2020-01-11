@@ -10,3 +10,7 @@
 [submodule "src/app/meeting"]
 	path = src/app/meeting
 	url = https://github.com/2019-BLM441/module-150202111.git
+
+[submodule "src/app/meetingParticipants"]
+	path = src/app/meetingParticipants
+	url = https://github.com/2019-BLM441/module-150202030.git
